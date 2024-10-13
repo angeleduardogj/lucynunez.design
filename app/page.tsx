@@ -1,101 +1,189 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import React from 'react'
+import { motion } from 'framer-motion'
+
+export default function Resume() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-[#FFFBF0] p-4 sm:p-6 flex items-center justify-center">
+      <motion.div 
+        layout
+        className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+      >
+        {/* Personal Info and Photo */}
+        <motion.div 
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, layout: { duration: 0.3 } }}
+          className="col-span-1 sm:col-span-2 bg-[#E5D0FF] rounded-3xl p-4 sm:p-6 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4"
+        >
+          <img src="/placeholder.svg?height=120&width=120" alt="Lucy Núñez" className="w-24 h-24 rounded-full object-cover" />
+          <div className="text-center sm:text-left">
+            <h1 className="text-xl sm:text-2xl font-bold text-[#4A154B]">Lucy Núñez</h1>
+            <h2 className="text-lg text-[#6B46C1] mb-2">Diseñadora gráfica</h2>
+            <div className="space-y-1 text-sm text-[#4A4A4A]">
+              <p>📧 lucynuneez@gmail.com</p>
+              <p>📞 6623645219</p>
+              <p>🌐 lucynunez.myportfolio.com</p>
+              <p>📍 Hermosillo, sonora, méxico</p>
+            </div>
+          </div>
+        </motion.div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Objective */}
+        <motion.div 
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1, layout: { duration: 0.3 } }}
+          className="bg-[#FFD6E0] rounded-3xl p-4 sm:p-6"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h3 className="text-lg sm:text-xl font-semibold text-[#D53F8C] mb-2">Objetivo</h3>
+          <p className="text-sm text-[#4A4A4A]">Mi objetivo es poner a prueba mis habilidades, crecer y superar nuevos retos. Busco trabajar en un entorno en donde pueda desenvolverme creativamente y alcanzar nuevas metas.</p>
+        </motion.div>
+
+        {/* Work Experience */}
+        <motion.div 
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, layout: { duration: 0.3 } }}
+          className="col-span-1 sm:col-span-2 bg-gradient-to-br from-[#FFF3C4] to-[#FFE4B5] rounded-3xl p-4 sm:p-6"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h3 className="text-lg sm:text-xl font-semibold text-[#D69E2E] mb-3">Experiencia Laboral</h3>
+          <ol className="relative border-s-2 border-[#FFB347] space-y-6">
+            <li className="ms-6">
+              <div className="absolute w-4 h-4 bg-[#FF6B6B] rounded-full mt-1.5 -start-2 border-2 border-white"></div>
+              <time className="mb-1 text-xs font-normal leading-none text-[#4A4A4A]">Octubre 2022 - presente</time>
+              <h3 className="text-sm font-semibold text-[#2C3E50]">Fixter <span className="bg-[#4ECDC4] text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded ms-2">Actual</span></h3>
+              <p className="mb-1 text-xs font-normal text-[#4A4A4A]">Diseñadora gráfica</p>
+              <p className="text-xs text-[#4A4A4A]">Desarrollo de contenido para redes sociales y creación de materiales impresos</p>
+            </li>
+            <li className="ms-6">
+              <div className="absolute w-4 h-4 bg-[#45B7D1] rounded-full mt-1.5 -start-2 border-2 border-white"></div>
+              <time className="mb-1 text-xs font-normal leading-none text-[#4A4A4A]">Febrero 2022 - Septiembre 2022</time>
+              <h3 className="text-sm font-semibold text-[#2C3E50]">Ecoallianza</h3>
+              <p className="mb-1 text-xs font-normal text-[#4A4A4A]">Diseñadora gráfica</p>
+              <p className="text-xs text-[#4A4A4A]">Desarrollo de contenido para redes sociales y creación de materiales impresos</p>
+            </li>
+            <li className="ms-6">
+              <div className="absolute w-4 h-4 bg-[#FFA07A] rounded-full mt-1.5 -start-2 border-2 border-white"></div>
+              <time className="mb-1 text-xs font-normal leading-none text-[#4A4A4A]">Febrero 2020 - Diciembre 2021</time>
+              <h3 className="text-sm font-semibold text-[#2C3E50]">Hiperactivo estudio</h3>
+              <p className="mb-1 text-xs font-normal text-[#4A4A4A]">Diseñadora Jr</p>
+              <p className="text-xs text-[#4A4A4A]">Desarrollo de contenido para redes sociales y creación de materiales impresos</p>
+            </li>
+          </ol>
+        </motion.div>
+
+        {/* Education */}
+        <motion.div 
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, layout: { duration: 0.3 } }}
+          className="bg-[#C6F6D5] rounded-3xl p-4 sm:p-6"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <h3 className="text-lg sm:text-xl font-semibold text-[#38A169] mb-2">Educación</h3>
+          <div className="space-y-2">
+            <div>
+              <p className="font-semibold text-[#2C3E50]">Universidad del Desarrollo Profesional</p>
+              <p className="text-sm text-[#4A4A4A]">2014-2018</p>
+              <p className="text-sm text-[#4A4A4A]">Licenciatura en Diseño Gráfico y Multimedia</p>
+            </div>
+            <div>
+              <p className="font-semibold text-[#2C3E50]">Colegio de Estudios Científicos y Tecnológicos del Estado de Sonora</p>
+              <p className="text-sm text-[#4A4A4A]">2011-2014</p>
+              <p className="text-sm text-[#4A4A4A]">Técnico en Informática</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Interests */}
+        <motion.div 
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4, layout: { duration: 0.3 } }}
+          className="bg-[#BEE3F8] rounded-3xl p-4 sm:p-6"
+        >
+          <h3 className="text-lg sm:text-xl font-semibold text-[#3182CE] mb-2">Intereses</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="text-center">
+              <span className="text-3xl mb-1 block">🎧</span>
+              <p className="text-sm text-[#4A4A4A]">Música</p>
+            </div>
+            <div className="text-center">
+              <span className="text-3xl mb-1 block">🎬</span>
+              <p className="text-sm text-[#4A4A4A]">Películas</p>
+            </div>
+            <div className="text-center">
+              <span className="text-3xl mb-1 block">✏️</span>
+              <p className="text-sm text-[#4A4A4A]">Dibujo</p>
+            </div>
+            <div className="text-center">
+              <span className="text-3xl mb-1 block">🎭</span>
+              <p className="text-sm text-[#4A4A4A]">Animación</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Skills */}
+        <motion.div 
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5, layout: { duration: 0.3 } }}
+          className="col-span-1 sm:col-span-2 bg-[#FEEBC8] rounded-3xl p-4 sm:p-6"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-[#DD6B20] mb-2">Habilidades</h3>
+              <ul className="list-disc list-inside text-sm space-y-1 mb-4 text-[#4A4A4A]">
+                <li>Responsabilidad y compromiso</li>
+                <li>Aptitudes para la atención al Cliente</li>
+                <li>Trabajo en equipo</li>
+              </ul>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center">
+                  <span className="w-8 h-8 bg-blue-500 text-white rounded-md flex items-center justify-center mr-2 text-xs">Ps</span>
+                  <span className="text-sm text-[#4A4A4A]">Intermedio</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="w-8 h-8 bg-purple-500 text-white rounded-md flex items-center justify-center mr-2 text-xs">Pr</span>
+                  <span className="text-sm text-[#4A4A4A]">Medio</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="w-8 h-8 bg-orange-500 text-white rounded-md flex items-center justify-center mr-2 text-xs">Ai</span>
+                  <span className="text-sm text-[#4A4A4A]">Intermedio</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="w-8 h-8 bg-pink-500 text-white rounded-md flex items-center justify-center mr-2 text-xs">Ae</span>
+                  <span className="text-sm text-[#4A4A4A]">Medio</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-[#DD6B20] mb-2">Paquetería Office</h3>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center">
+                  <span className="w-10 h-10 bg-blue-600 text-white rounded-md flex items-center justify-center mr-2 text-lg font-bold">W</span>
+                  <span className="text-sm text-[#4A4A4A]">Word</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="w-10 h-10 bg-red-600 text-white rounded-md flex items-center justify-center mr-2 text-lg font-bold">P</span>
+                  <span className="text-sm text-[#4A4A4A]">PowerPoint</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="w-10 h-10 bg-green-600 text-white rounded-md flex items-center justify-center mr-2 text-lg font-bold">X</span>
+                  <span className="text-sm text-[#4A4A4A]">Excel</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
     </div>
-  );
+  )
 }
